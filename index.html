@@ -14,18 +14,40 @@
 <body>
     <header>
         <nav>
-            <a href="http://" target="_blank" rel="" id="a_dark">NETWORK</a>
+            <a href="http://google.com" target="_blank" rel="" id="a_dark">NETWORK</a>
             <a href="http://" target="_blank" rel="" id="a_dark">WHO WE SERVE</a>
             <a href="http://" target="_blank" rel="" id="a_dark">SOLUTIONS</a>
             <a href="http://" target="_blank" rel="" id="a_dark">WHT DT ONE?</a>
             <a href="http://" target="_blank" rel="" id="a_dark">COMPANY</a>
-            <a href="http://" target="_blank" rel="" id="a_dark">GET IN TOUCH</a>
+            <!--<a href="http://" rel="" id="a_dark">GET IN TOUCH</a> -->
+
+           <div class="button">
+                <a href="#" id="open_pop_up">GET IN TOUCH</a>
+           </div>
+        
+            <div class="pop_up" id="pop_up">
+                <div class="pop_up_container">
+                    <div class="pop_up_body" id="pop_up_body">
+                        <h2>Log in</h2>
+                        <form action="">
+                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Surname">
+                            <button>Log In</button>
+    
+                        </form>
+                        <div class="pop_up_close" id="pop_up_close">&#10006</div>
+                    </div>
+                </div>
+            </div>
         </nav>
+
+
         <article style="display: flex; flex-direction: row; justify-content: space-between;">
         <section class="header_text">
             <h1>Mobilise global users. <br> Monetise new markets. <br> <big>Bring your <br> customers closer.</big></h1> 
             <h5>Enable highly motivating non-cash micropayments and offer in-demand prepaid solutions – with a single connection.</h5>
-            <button class="button_dark" type="button">GET IN TOUCH</button>
+            <button class="button_dark" type="button"  onclick="location.href=''" >
+                GET IN TOUCH</button>
             </section>
         <section style="background-image:url(img/circle.svg); background-size: 35em; background-repeat: no-repeat; text-align: center; display: inline-flex; justify-content: center;">
         <img src="img/main_girl.svg" alt="" style="width: 35em"> 
@@ -84,11 +106,11 @@
     
             <h2>Our solutions</h2>
 
-            <article id="our_solutions_article">
+            <article id="our_solutions_article" >
                 <section>
-                    <button type="button"  id="solutions_button_mobilise">Mobilise</button>
-                    <button type="button"  id="solutions_button_monetise">Monetise</button>
-                    <button type="button"  id="solutions_button_retein">RETEIN & REWARD</button>
+                    <button type="button" class="underline-effect"  id="solutions_button_mobilise" onclick="toggleUnderline(this)">Mobilise</button>
+                    <button type="button" class="underline-effect" id="solutions_button_monetise" onclick="toggleUnderline(this)">Monetise</button>
+                    <button type="button" class="underline-effect" id="solutions_button_retein" onclick="toggleUnderline(this)">RETEIN & REWARD</button>
                 </section>
 
                 <section id="content_section" style=" box-sizing: border-box; padding-left: 10%; text-align: left; padding-top: 1em;" >
@@ -104,9 +126,19 @@
     <footer>
 
     </footer>
+    <script>
+    function toggleUnderline(element) {
+        // Удаляем класс 'active' у всех элементов с классом 'underline-effect'
+        var elements = document.querySelectorAll('.underline-effect');
+        elements.forEach(function(el) {
+            el.classList.remove('active');
+        });
 
-    <script src="./script.js">
-       
+        // Добавляем класс 'active' к текущему элементу
+        element.classList.add('active');
+    }
     </script>
+    <script src="script.js"></script>
+    <script src="popUp.js"></script>
 </body>
 </html>

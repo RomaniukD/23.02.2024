@@ -1,4 +1,3 @@
-  
  
  document.getElementById('solutions_button_mobilise').addEventListener('click', function() {
     document.getElementById('content_section').innerHTML = `
@@ -37,3 +36,14 @@ document.getElementById('solutions_button_retein').addEventListener('click', fun
         
     `
 })
+
+function toggleUnderline(element) {
+    // Удаляем класс 'active' у всех элементов с классом 'underline-effect'
+    var elements = document.querySelectorAll('.underline-effect');
+    elements.forEach(function(el) {
+        el.classList.remove('active');
+    });
+
+    // Добавляем класс 'active' к текущему элементу
+    element.classList.add('active');
+}
